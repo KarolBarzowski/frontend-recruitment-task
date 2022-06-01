@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -28,14 +28,26 @@
         class="module__image"
       />
       <div class="module__content">
-        <h1 class="module__title">Lorem ipsum</h1>
-        <p class="module__description">
+        <h1 class="heading">Lorem ipsum</h1>
+        <p class="paragraph">
           Infinitely scalable, feature-rich and cloud-native data management and protection for
           modern and legacy infrastructures and SaaS platforms, managed via a single app with no
           hardware required.
         </p>
-        <button type="button" class="module__button">Button</button>
+        <button type="button" class="button" id="modalOpenButton">Button</button>
       </div>
     </section>
+    <div class="modal modal--hidden" id="modal">
+      <div class="modal__overlay" id="modalOutside"></div>
+      <div class="modal__content">
+        <button type="button" class="modal__close" id="modalCloseButton"></button>
+        <h1 class="heading">Alert!</h1>
+        <p class="paragraph">
+          You have clicked <span class="strong" id="counter">X times</span> to related button.
+        </p>
+        <button type="button" class="button modal--hidden" id="counterResetButton">Reset</button>
+      </div>
+    </div>
+    <script src="dist/all.js"></script>
   </body>
 </html>

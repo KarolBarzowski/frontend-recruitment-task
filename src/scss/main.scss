@@ -1,4 +1,4 @@
-$primary: #E4C1AE;
+$primary: #e4c1ae;
 $dark: #121212;
 
 * {
@@ -20,12 +20,12 @@ $dark: #121212;
   @media only screen and (min-width: 1000px) {
     justify-content: center;
   }
-  
+
   &__image {
     height: auto;
     width: 100%;
     object-fit: cover;
-    
+
     @media only screen and (min-width: 1000px) {
       max-width: 505px;
     }
@@ -39,34 +39,111 @@ $dark: #121212;
       margin: 0;
     }
   }
-  
-  &__title {
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-    font-size: 42px;
-    line-height: 50px;
-    color: $dark;
-  }
-  
-  &__description {
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 24px;
-    color: $dark;
-    margin: 24px 0 32px;
+}
+
+.heading {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 50px;
+  color: $dark;
+  margin-bottom: 24px;
+}
+
+.paragraph {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: $dark;
+}
+
+.button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  color: white;
+  padding: 16px 40px;
+  margin-top: 32px;
+  background-color: $primary;
+  border-radius: 32px;
+  border: none;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $dark;
+    opacity: 0.5;
   }
 
-  &__button {
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 16px;
-    color: white;
-    padding: 16px 40px;
-    background-color: $primary;
-    border-radius: 32px;
-    border: none;
-    cursor: pointer;
+  &__content {
+    position: relative;
+    padding: 25px;
+    width: calc(100% - 30px);
+    background-color: white;
+
+    @media only screen and (min-width: 1000px) {
+      padding: 56px 95px;
+      width: auto;
+    }
   }
+
+  &__close {
+    position: absolute;
+    top: 46px;
+    right: 46px;
+    border: none;
+    background-color: transparent;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 15px;
+      width: 2px;
+      background-color: black;
+      border-radius: 10px;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.strong {
+  color: $dark;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
 }
